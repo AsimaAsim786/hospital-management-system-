@@ -1,0 +1,210 @@
+Hospital Management System
+
+Introduction
+
+The Hospital Management System is a C++ Object-Oriented Programming project designed to manage hospital staff, patients, appointments, and admitted patients.
+
+The system focuses on applying important Object-Oriented Programming concepts to a real-world hospital environment. It provides features such as patient registration, doctor management, appointment scheduling, doctor assignment, patient admission, validation, and file-based data storage.
+
+Why This Project?
+
+Managing patient and doctor information manually can be difficult and time-consuming. This project provides a simple computerized system for organizing important hospital records.
+
+The main purpose of this project is to understand how C++ OOP concepts can be applied to build a practical real-world management system.
+
+Main Features
+
+- Add and view doctors/staff
+- Register new patients
+- Generate patient IDs and appointment numbers
+- Validate patient information
+- Validate CNIC and phone numbers
+- Schedule appointments using date, day, and timing
+- Automatically assign doctors according to:
+  - Doctor gender
+  - Duty day
+  - Duty timing
+- Admit patients
+- Store admission and discharge dates
+- Prevent duplicate patient CNICs
+- Save patient data in files
+- Load previously saved patient data
+- Maintain patient history
+- Console-based colored interface
+
+Classes
+
+Person
+
+"Person" is the base class that contains common personal information such as:
+
+- Name
+- Age
+- CNIC
+- Phone number
+- Gender
+
+It also provides validation and input/display functionality.
+
+Staff
+
+"Staff" inherits from "Person" and represents hospital doctors/staff.
+
+It contains information such as:
+
+- Staff ID
+- Specialization
+- Duty days
+- Duty timing
+
+The current system uses Cardiologist as the fixed specialization.
+
+Patient
+
+"Patient" inherits from "Person" and manages patient-related information.
+
+It includes:
+
+- Patient ID
+- Appointment number
+- Appointment date
+- Day
+- Timing
+- Doctor gender preference
+- Assigned doctor
+- Bill status
+- Disease
+
+AdmittedPatient
+
+"AdmittedPatient" inherits from "Patient" and represents patients who are admitted to the hospital.
+
+It additionally stores:
+
+- Admission date
+- Discharge date
+
+Hospital
+
+"Hospital" is the main management class. It maintains collections of doctors, patients, and admitted patients.
+
+It is responsible for:
+
+- Adding doctors
+- Viewing doctors
+- Registering patients
+- Admitting patients
+- Assigning doctors
+- Checking duplicate CNICs
+- Saving data
+- Loading data
+
+OOP Concepts Used
+
+This project demonstrates several important C++ OOP concepts:
+
+Inheritance
+
+"Staff" and "Patient" inherit common personal information from "Person".
+
+"AdmittedPatient" further inherits from "Patient".
+
+Encapsulation
+
+Data members are kept inside classes and accessed through appropriate member functions.
+
+Polymorphism
+
+Virtual functions such as patient and person input/display functions demonstrate runtime polymorphism through inheritance.
+
+Abstraction
+
+Different classes represent specific real-world entities and hide their internal implementation details.
+
+Pointers and References
+
+The project uses C++ references in functions where objects are processed without unnecessary copying.
+
+Data Validation
+
+The system validates important user inputs before accepting them.
+
+Examples include:
+
+- Name must contain alphabets and spaces
+- Age must be within a valid range
+- CNIC must contain exactly 13 digits
+- Phone number must contain exactly 11 digits
+- Appointment date is processed to determine the day
+
+Doctor Assignment System
+
+One of the main features of the project is automatic doctor assignment.
+
+When a patient creates an appointment, the system checks the available doctors according to:
+
+1. Patient's selected doctor gender
+2. Appointment day
+3. Appointment timing
+
+If a matching doctor is found, the doctor is automatically assigned to the patient. Otherwise, the system reports that a doctor is not available.
+
+File Handling
+
+The project uses file handling to preserve important information even after the program closes.
+
+The system works with files for:
+
+- Patient records
+- Admitted patient records
+- Patient history
+
+This allows previously stored information to be loaded again when required.
+
+Technologies Used
+
+- Language: C++
+- Programming Paradigm: Object-Oriented Programming
+- Libraries: iostream, fstream, vector, string, cctype, ctime
+- Platform-specific libraries: Windows.h, conio.h, cstdio
+- Data Storage: Text files
+- Design: UML-based class design
+
+Project Structure
+
+The main components of the system are:
+
+"Person"
+↓
+"Staff"
+
+"Person"
+↓
+"Patient"
+↓
+"AdmittedPatient"
+
+"Hospital" manages:
+
+- Doctors
+- Patients
+- Admitted Patients
+
+Future Improvements
+
+Possible future improvements could include:
+
+- A graphical user interface
+- More hospital departments and specializations
+- Improved date validation
+- Search and update functionality
+- More detailed billing management
+- Database integration
+
+Conclusion
+
+This project demonstrates how C++ Object-Oriented Programming can be used to design a practical Hospital Management System.
+
+Through this project, concepts such as inheritance, encapsulation, polymorphism, abstraction, file handling, validation, vectors, and class relationships are applied together in a real-world scenario.
+
+The project is designed not only to perform basic hospital management tasks but also to strengthen practical programming, system-design, and problem-solving skills.
